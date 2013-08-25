@@ -1,0 +1,20 @@
+{
+  "name": "timeseries_getter",
+  "description": "Simple program to which you can add node.io jobs to scrape data and add to a single table in a database",
+  "version": "0.0.1",
+  "author": {
+    "name": "Satheesh Vattekkat",
+    "url": "http://vsbabu.org/"
+  },
+  "private": true,
+  "scripts": {
+    "start": "node getts"
+  },
+  "licenses": [],
+  "dependencies": {
+    "node.io": ">=0.5.1",
+    "sqlite3": ">=2.1.15",
+    "optimist": ">=0.6.0",
+    "moment": ">=2.1.0"
+  }
+}
