@@ -26,7 +26,9 @@ if (argv.m == 'manual') {
   result.source_key = argv.k;
   result.item = argv.i;
   result.reading = argv.r;
+  tsrecorder.init(config.storage.db);
   tsrecorder.record(result.source, result.source_key, result.item, result.reading);
+  tsrecorder.close();
 } else {
   var nodeio = require('node.io');
   var job; var job_file = path.resolve(config.jobs.dir, argv.s);
@@ -41,7 +43,6 @@ if (argv.m == 'manual') {
       tsrecorder.init(config.storage.db);
       output.forEach(function(result){
         tsrecorder.record(result.source, result.source_key, result.item, result.reading);
-        //TODO: add a pluggable event listener here; at least one that could be specified by command line options
       });
       tsrecorder.close();
     },
