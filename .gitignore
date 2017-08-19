@@ -1,3 +1,4 @@
 node_modules/*
 *.db
 samples/*
+package-lock.json
